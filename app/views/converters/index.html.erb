@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Converters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @converters.each do |converter| %>
+      <tr>
+        <td><%= converter.name %></td>
+        <td><%= link_to 'Show', converter %></td>
+        <td><%= link_to 'Edit', edit_converter_path(converter) %></td>
+        <td><%= link_to 'Destroy', converter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Converter', new_converter_path %>
