@@ -69,6 +69,6 @@ class ConvertersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def converter_params
-      params.require(:converter).permit(:name)
+      params.require(:converter).permit(:name, :file)
     end
 end

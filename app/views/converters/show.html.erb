@@ -5,5 +5,10 @@
   <%= @converter.name %>
 </p>
 
+<p>
+  <strong>File:</strong>
+  <%= @converter.file.current_path %>
+</p>
+
 <%= link_to 'Edit', edit_converter_path(@converter) %> |
 <%= link_to 'Back', converters_path %>
