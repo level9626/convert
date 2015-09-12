@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :converters
+  resources :converters do
+    member do
+      get :download
+    end
+  end
 
   root 'converters#index'
   # The priority is based upon order of creation: first created -> highest priority.

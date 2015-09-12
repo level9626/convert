@@ -1,5 +1,5 @@
 class ConvertersController < ApplicationController
-  before_action :set_converter, only: [:show, :edit, :update, :destroy]
+  before_action :set_converter, only: [:show, :edit, :update, :destroy, :download]
 
   # GET /converters
   # GET /converters.json
@@ -59,6 +59,10 @@ class ConvertersController < ApplicationController
       format.html { redirect_to converters_url, notice: 'Converter was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def download
+    send_file @converter.file.path
   end
 
   private
