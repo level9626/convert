@@ -25,7 +25,13 @@ p#notice = notice
           td
             = link_to converter, method: :delete, data: { confirm: 'Are you sure?' }
               i.fa.fa-trash
+  br
+  p.text-center
+    = link_to 'New convert', new_converter_path, class: 'btn btn-primary'
 
-br
+- else
+  h1 Convert your first file now!
+  p.text-center
+    = link_to 'Lets go!', new_converter_path, class: 'btn btn-primary'
 
-= link_to 'New Converter', new_converter_path, class: 'btn btn-primary'
+

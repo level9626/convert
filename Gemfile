@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.2.1'
 
 gem 'rails', '4.2.1'
 gem 'pg'
@@ -13,7 +13,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
-gem 'simple_form'
 gem 'slim'
 gem 'font-awesome-rails'
 
