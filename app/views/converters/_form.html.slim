@@ -1,0 +1,19 @@
+= bootstrap_form_for(@converter) do |f|
+  = render 'shared/error_messages'
+
+  div
+    = f.text_field :name, label: 'Name *'
+  br
+
+  div
+    = f.file_field :file, label: 'Choose file (only json/xml) *:'
+  br
+
+  div
+    = f.select :extension, options_for_select(Converter::EXTENSION), label: 'Convert to:'
+  br
+
+  div
+    = f.submit 'Upload file'
+  br
+end

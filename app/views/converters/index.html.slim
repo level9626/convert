@@ -1,0 +1,31 @@
+p#notice = notice
+
+- if @converters.exists?
+  h1 Listing Converters
+
+  table.table.table-bordered.table-condensed
+    thead
+      tr
+        th Name
+        th Show
+        th Edit
+        th Destroy
+
+    tbody.table-hover
+      - @converters.each do |converter|
+        tr
+          td
+            = converter.name
+          td
+            = link_to converter
+              i.fa.fa-search
+          td
+            = link_to edit_converter_path(converter)
+              i.fa.fa-edit
+          td
+            = link_to converter, method: :delete, data: { confirm: 'Are you sure?' }
+              i.fa.fa-trash
+
+br
+
+= link_to 'New Converter', new_converter_path, class: 'btn btn-primary'

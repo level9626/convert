@@ -1,0 +1,11 @@
+p id="notice"
+  = notice
+
+h1 Download converted file '#{ @converter.name }' in '.#{ @converter.extension }' extension
+
+p.text-center
+  = link_to 'Download', download_converter_path(@converter), class: 'btn btn-default btn-lg'
+
+p.text-center
+  = link_to 'Edit', edit_converter_path(@converter), class: 'btn btn-success btn-sm btn-space'
+  = link_to 'Back', converters_path, class: 'btn btn-info btn-sm'
