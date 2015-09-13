@@ -17,11 +17,18 @@
   </div>
 
   <div class="file-field">
+    <%= f.label 'Choose file (only json/xml) :' %>
     <%= f.file_field :file %>
   </div>
   <br>
 
+  <div class="extension-field">
+    <%= f.label 'Convert to:' %>
+    <%= f.select :extension, options_for_select(Converter::EXTENSION) %>
+  </div>
+  <br>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Upload file' %>
   </div>
 <% end %>

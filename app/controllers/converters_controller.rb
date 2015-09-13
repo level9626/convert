@@ -28,7 +28,7 @@ class ConvertersController < ApplicationController
 
     respond_to do |format|
       if @converter.save
-        format.html { redirect_to @converter, notice: 'Converter was successfully created.' }
+        format.html { redirect_to @converter, notice: 'Converter was successfully uploaded.' }
         format.json { render :show, status: :created, location: @converter }
       else
         format.html { render :new }
@@ -62,7 +62,7 @@ class ConvertersController < ApplicationController
   end
 
   def download
-    send_file @converter.file.path
+    send_file "#{Rails.root}/public/uploads/converter/file/#{@converter.id}/data.#{@converter.extension}"
   end
 
   private
@@ -73,6 +73,6 @@ class ConvertersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def converter_params
-      params.require(:converter).permit(:name, :file)
+      params.require(:converter).permit(:name, :file, :extension)
     end
 end

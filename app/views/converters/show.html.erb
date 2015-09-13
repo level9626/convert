@@ -6,8 +6,12 @@
 </p>
 
 <p>
-  <strong>File:</strong>
-  <%= File.basename(@converter.file.path) %>
+  <strong>Extension:</strong>
+  <%= @converter.extension %>
+</p>
+
+<p>
+  <strong>Download CSV file:</strong>
   <%= link_to 'Download', download_converter_path(@converter) %>
 </p>
 
