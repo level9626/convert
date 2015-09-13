@@ -15,6 +15,8 @@ gem 'bootstrap-sass'
 gem 'bootstrap_form'
 gem 'slim'
 gem 'font-awesome-rails'
+gem 'rails_12factor'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
