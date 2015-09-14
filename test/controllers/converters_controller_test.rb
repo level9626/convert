@@ -18,7 +18,7 @@ class ConvertersControllerTest < ActionController::TestCase
 
   test "should create converter" do
     assert_difference('Converter.count') do
-      post :create, converter: { name: @converter.name }
+      post :create, converter: { name: @converter.name, file: Rack::Test::UploadedFile.new(File.join('public/uploads/converter/example/books.xml')), extension: 'csv' }
     end
 
     assert_redirected_to converter_path(assigns(:converter))
@@ -35,7 +35,7 @@ class ConvertersControllerTest < ActionController::TestCase
   end
 
   test "should update converter" do
-    patch :update, id: @converter, converter: { name: @converter.name }
+    patch :update, id: @converter, converter: { name: @converter.name, file: Rack::Test::UploadedFile.new(File.join('public/uploads/converter/example/data.json')), extension: 'csv' }
     assert_redirected_to converter_path(assigns(:converter))
   end
 
