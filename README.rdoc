@@ -10,6 +10,6 @@ https://mighty-anchorage-8264.herokuapp.com
 == OR SETUP LOCALLY
 - install Postgresql
 - install gems bundle
-- setup database rake db:create && rake db:migrate && rake db:seed
+- setup database rake db:create && rake db:migrate
 - run the server <tt>rails s</tt>
 - run tests <tt>rake test</tt>
